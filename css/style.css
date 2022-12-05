@@ -1,0 +1,346 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 30px;
+    margin: 0;
+}
+
+/* NAVIGATION BAR STYLING */
+/* MENU + LINKS*/
+div.menu {
+    background-color: #467f29; /* navigation-bar colour*/
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    top: 0; /* position nav bar at the very top of every page*/
+    position: fixed; /* keeps nav bar at top even when scrolling down*/
+    z-index: 1000; /* to ensure the navigation bar is always on top*/
+}
+
+/* WEBSITE HOME BUTTON / LOGO*/
+div.menu .logo {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: auto;
+    order: 1; /* place ParkFinder menu link of the left end of nav bar*/
+}
+
+/* MENU LINKS */
+div.menu a {
+    padding: 14px 16px; /* spreads out the menu links*/
+    color: white;
+    text-decoration: none;
+    text-align: center; /* align menu link text to center of menu link button */
+    font-size: 20px;
+    order: 2; /* place all other menu links of the right end of nav bar*/
+}
+
+/* Makes menu links change colour when mouse hovers over it or if link is accessed */
+div.menu a:hover, div.menu a.active {
+    background-color:#333;
+}
+
+/* CONTENT */
+
+.content {
+    /* Centers content on screen */
+    max-width: 800px;
+    min-width: 400px;
+    margin: auto;
+    /* Add padding before footer*/
+    padding-bottom: 30px; 
+}
+
+.content #map {
+    height: 400px;
+}
+
+/* SHORTER TEXTBOX STYLING */
+input[type=text], input[type=password], input[type=email] {
+    width: 45%;
+    height:20px;
+    font-size:8pt;
+    background: #f1f1f1;
+    border: none;
+}
+
+.attribution-text {
+    font-size: 6pt;
+    margin: 0
+}
+
+/* LONGER TEXTBOX STYLING */
+input[type=text].long-textbox {
+    width: 280px;
+}
+
+input[type=email] {
+    width: 300px;
+}
+
+.custom-textarea {
+    background-color: #f1f1f1;
+}
+
+/* LARGE IMAGES */
+
+img.full-image {
+    /* Moved image presentation markup out of HTML and defined here as per WYSIWYG docs*/
+    width: 100%;
+}
+
+/* FORMS STYLING */
+form {
+	max-width: 400px;
+    margin: auto;
+}
+
+form.search-form {
+	max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Centers the search form elements on page */
+}
+
+.reviewForm {
+    margin-left: 0;
+}
+
+/* BUTTONS STYLING */
+/* group together common attributes of all custom-defined button styles */
+.register_login_button, .search_button, .custom-button, .submit_review_button {
+    background-color: #467f29; /* Match button colour with nav bar colour */
+    text-align: center;
+    cursor: pointer;
+    border-style: none; /* remove default button border */
+    color: white; /* makes text white on buttons*/
+    cursor: pointer;
+}
+
+.register_login_button {
+    padding: 14px 16px;
+    width: 100%;
+    font-size:12pt;
+}
+
+.submit_review_button {
+    padding: 14px 16px;
+    width: 100px;
+    height: 50px;
+    font-size:12pt;
+}
+
+.search_button {
+    width: 30px;
+    height: 30px;
+}
+
+/* SELECT BOX STYLING */
+.custom-select {
+    background-color: #c9e9ba;
+}
+
+/* RESULTS PAGE STYLING */
+
+.results-container {
+    /* Display the list and map columns on a single row */
+    display: flex;
+    flex-direction: row;
+}
+
+.list-column {
+    float: left;
+    width: 33%;
+    height: 340px;
+}
+
+.map-column {
+    float: right;
+    width: 66%;
+    height: 340px;
+}
+
+#results-map {
+    width: 100%;
+    height: 100%;
+}
+
+/*.map-column img {
+    height: 100%
+}*/
+
+/* RESULTS TABLE STYLING */
+
+table.results-table {
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid black;
+}
+
+/* SEARCH RESULTS LIST STYLING */
+
+tbody.results-body {
+    border-bottom: 1px solid black;
+    /* Make results scrollable when there's too many results */
+    display: block;
+    overflow: auto;
+    height: 350px;
+}
+
+thead.results-head {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: block;
+}
+
+td.result {
+    /* Add a line after each result */
+    border-bottom: 1px solid black;
+}
+
+/* STYLING FOR INDIVIDUAL SEARCH RESULT */
+.search-result-item {
+    height: 30px;
+    border-bottom: 1px solid black;
+    padding: 0;
+}
+
+.search-result-item > td > h3 {
+    margin: 0;
+}
+
+/* RATING & REVIEWS STYLING */
+
+/* styling for ratings stars*/
+.checked {
+    color: #467f29;
+}
+.unchecked {
+    color: rgba(0,255,0,0.2);
+}
+
+/* styling for bars that keep counts for each star rating */
+.five-star-bar, .four-star-bar, .three-star-bar, .two-star-bar, .one-star-bar {
+    box-sizing: border-box;
+    height: 20px;
+    background-color: #467f29;
+}
+/* each bar is currently set to a fixed length for assignment 1 purposes */
+.five-star-bar {
+    width: 80%; 
+}
+.four-star-bar {
+    width: 2%;
+}
+.three-star-bar {
+    width: 4%;
+}
+.two-star-bar {
+    width: 8%;
+} 
+.one-star-bar {
+    width: 10%;
+}
+
+/* the following are stylings for the layout of the ratings bars */
+
+.bar-rows {
+    display: flex;
+    flex-direction: column; /* place each bar below the other */
+    padding-bottom: 10px; /* vertical distance between each bar*/
+}
+
+.row {
+    /* lays out the bar, its label, and its count value on a single line */
+    display: flex;
+    flex-direction: row;
+}
+
+.bar-label, .bar, .bar-value {
+    /*float: left;*/
+    margin-top: 10px;
+}
+
+.bar-label {
+    width: 35px;
+}
+
+.bar {
+    width: 90%; /* width not fixed so as to fill width of .content on wider screens */
+    background-color: #f1f1f1;
+}
+
+.bar-value {
+    width: 20px;
+    text-align: right;
+}
+
+/* REVIEWS STYLING */
+/* used tables because reviews are tabular data which will be drawn from databases in next assignments*/
+
+.reviews-table {
+    border-spacing: 0;
+}
+
+.reviews-table-header {
+    text-align: left;
+}
+
+.reviews-table-body {
+    /* since there can be many reviews, make reviews section scrollable*/
+    display: block;
+    overflow: auto;
+    height: 320px;
+    border-top: 1px solid black;
+}
+
+/* shows each reviewers name in the left column of each review */
+.reviews-username-column {
+    width: 100px; /* ensures all 5 stars stay on one line */
+    vertical-align: top;
+}
+
+.reviews-review-column, .reviews-username-column  {
+    /* add a line after each review */
+    border-bottom: 1px solid black;
+    /* add some space between reviews */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    margin: auto;
+    width: 95%; /* Ensures horizontal rule above the footer doesn't touch edges of screen */
+    text-align: center; /* moves the footer links to the middle */
+}
+
+.footer a {
+    padding: 0 16px;
+    text-decoration: none;
+}
+
+/* Resizes menu and content if screen size is less than 450px*/
+@media screen and (max-width: 450px) {
+    div.menu {
+        flex-wrap: wrap; /*Turns horizontal nav bar into vertical */
+    }
+    div.menu a {
+        flex-basis: 20% /* Stacks menu links horizontally to make vertical navbar smaller*/
+    }
+    .content {
+        padding-top: 50px; /* ensures content isn't cut off by navigation bar */
+        /* ensure content is within bounds of screen on small screen portrait mode */
+        max-width: 320px;
+        min-width: 320px;
+    }
+    .footer a {
+        padding: 0 8px; /* Ensures footer links stays on single line for screens as small as 320px */
+    }
+    tbody.results-body {
+        height: 300px; /* Ensures results scrollable list stays in bounds */
+    }
+    .bar {
+        width: 260px; /* Ensures ratings bars stay within screen width */
+    }
+}
